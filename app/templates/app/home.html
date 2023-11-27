@@ -1,0 +1,38 @@
+{% comment %} <center>
+<h1> Home Page </h1>
+
+FirstName : {{request.session.Firstname}}
+<br>
+Lastname  : {{request.session.Lastname}}
+<br>
+Email : {{request.session.Email}}
+</center> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body{
+    background-color:skyblue;
+    }
+</style>
+
+</head>
+<body >
+
+<br>
+<h1 style="padding-left:20px;">Welcome to the Home Page</h1>
+<br>
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button class="btn btn-primary" style="margin-left:1000px;margin-top:-120px;" type="submit">Sign Out</button>
+
+</form>
+
+
+</body>
+</html>
